@@ -18,9 +18,9 @@ with open('data.txt', encoding="utf-8") as file:
                 ids[student_id] = True
                 count += 1
             else:
-                print("Fail")
+                print("Fail") # already scanned
         else:
             print("Not in the student list")
+        with open('result.json', 'w') as file:
+            file.write(json.dumps(ids))
 print(count)
-with open('result.json', 'w') as file:
-    file.write(json.dumps(ids))
